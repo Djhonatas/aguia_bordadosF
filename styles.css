@@ -10,7 +10,7 @@ body {
 
 /* Estilo para a navbar */
 nav {
-  background-color: #6c5b9a;
+  background-color: #a8a30c;
   overflow: hidden;
   position: fixed;
   width: 100%;
@@ -45,7 +45,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #5a4b9d;
+  background-color: #a8a30c;
   padding: 12px 24px;
 }
 
@@ -69,7 +69,7 @@ nav ul li a.active {
 }
 
 .search-container button {
-  background-color: #6c5b9a;
+  background-color: #a8a30c;
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -89,7 +89,7 @@ nav ul li a.active {
 
 /* Estilo para títulos */
 h1 {
-  color: #6c5b9a;
+  color: #a8a30c;
   text-align: center;
   margin-top: 50px;
   font-size: 40px;
@@ -127,11 +127,11 @@ form input {
 form input:focus,
 form button:focus {
   outline: none;
-  border-color: #6c5b9a;
+  border-color: #a8a30c;
 }
 
 form button {
-  background-color: #6c5b9a;
+  background-color: #a8a30c;
   color: white;
   border: none;
   cursor: pointer;
@@ -143,7 +143,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #5a4b9d;
+  background-color: #a8a30c;
 }
 
 /* Estilos específicos para a tabela */
@@ -156,7 +156,7 @@ table {
 }
 
 table thead {
-  background-color: #6c5b9a;
+  background-color: #a8a30c;
   color: white;
 }
 
@@ -225,7 +225,7 @@ table tbody td {
 
 .close:hover,
 .close:focus {
-  color: #6c5b9a;
+  color: #a8a30c;
   text-decoration: none;
   cursor: pointer;
 }
@@ -234,9 +234,37 @@ table tbody td {
   margin: 15px 0;
 }
 
+.alert {
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 16px;
+  position: absolute !important;
+  top: 10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 1000 !important;
+  width: 80% !important;
+  background-color: #fff !important;
+  /* Adicione uma cor de fundo para depuração */
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
 /* Botões adicionais */
 .detailButton {
-  background-color: #6c5b9a;
+  background-color: #a8a30c;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -251,11 +279,11 @@ table tbody td {
 }
 
 .detailButton:hover {
-  background-color: #5a4b9d;
+  background-color: #a8a30c;
 }
 
 button {
-  background-color: #6c5b9a;
+  background-color: #a8a30c;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -270,7 +298,7 @@ button {
 }
 
 button:hover {
-  background-color: #5a4b9d;
+  background-color: #8f8b09;
 }
 
 /* Media Queries para Responsividade */

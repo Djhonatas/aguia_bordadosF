@@ -86,16 +86,36 @@ async function filterTable() {
   }
 }
 
+// Função de mensagens
+function showAlert(message, type = 'success') {
+  console.log('Chamando showAlert com:', message, type); // Log para depuração
+
+  const alertBox = document.createElement('div');
+  alertBox.className = `alert alert-${type}`;
+  alertBox.textContent = message;
+
+  const formSection = document.querySelector('.content-section.show') || document.querySelector('.content-section');
+  if (formSection) {
+    formSection.appendChild(alertBox);
+  } else {
+    console.error('Elemento .content-section ou .content-section.show não encontrado.');
+    document.body.appendChild(alertBox); // Adiciona ao body se não encontrar a seção
+  }
+
+  console.log('Alerta adicionado:', alertBox); // Log para depuração
+
+  setTimeout(() => {
+    alertBox.remove();
+  }, 5000);
+}
+
 // Função da Home
 async function loadHomeTable() {
-  const url = 'https://aguia-bordados.vercel.app/home'; // Atualize para URL de produção
+  const url = 'https://aguia-bordados.vercel.app/home';
 
   try {
     const response = await fetch(url);
     const data = await response.json();
-
-    // Verifique o formato dos dados recebidos
-    console.log('Dados recebidos:', data);
 
     const tableBody = document.querySelector('#homeTable tbody');
     tableBody.innerHTML = '';
@@ -115,7 +135,6 @@ async function loadHomeTable() {
   }
 }
 
-
 function showSection(sectionId) {
   const sections = document.querySelectorAll('.content-section');
   sections.forEach(section => {
@@ -123,23 +142,6 @@ function showSection(sectionId) {
   });
 }
 
-// Função de mensagens
-function showAlert(message, type = 'success') {
-  const alertBox = document.createElement('div');
-  alertBox.className = `alert alert-${type}`;
-  alertBox.textContent = message;
-
-  const formSection = document.querySelector('.content-section.show') || document.querySelector('.content-section');
-  if (formSection) {
-    formSection.appendChild(alertBox);
-
-    setTimeout(() => {
-      alertBox.remove();
-    }, 5000);
-  } else {
-    console.error('Element .content-section or .content-section.show not found.');
-  }
-}
 
 // Função de inserção dos clientes
 async function handleSubmitCliente(event) {
@@ -154,17 +156,22 @@ async function handleSubmitCliente(event) {
       body: JSON.stringify(Object.fromEntries(new FormData(form)))
     });
 
-    const data = await response.json();
     form.reset();
     if (!response.ok) {
+      const data = await response.json();
+      console.log('Mostrar alerta de erro:', data.mensagem || 'Erro ao criar cliente. Verifique os dados e tente novamente.');
       showAlert(data.mensagem || 'Erro ao criar cliente. Verifique os dados e tente novamente.', 'error');
     } else {
-      showAlert('Cliente criado com sucesso!');
+      // showAlert('Cliente criado com sucesso!');
+      alert('Cliente inserido com sucesso!')
     }
   } catch (error) {
+    alert('Erro ao criar cliente. Verifique os dados e tente novamente.', 'error')
+    console.log('Erro ao criar cliente:', error);
     showAlert('Erro ao criar cliente. Verifique os dados e tente novamente.', 'error');
   }
 }
+
 
 // Função de inserção dos produtos
 async function handleSubmitProduto(event) {
@@ -188,6 +195,7 @@ async function handleSubmitProduto(event) {
       }
     } else {
       form.reset();
+      alert('Produto inserido com sucesso!')
       showAlert('Produto criado com sucesso!');
     }
   } catch (error) {
@@ -214,6 +222,7 @@ async function handleSubmitLinha(event) {
       showAlert(data.mensagem || 'Erro ao criar linha. Verifique os dados e tente novamente.', 'error');
     } else {
       showAlert('Linha criada com sucesso!');
+      alert('Linha inserida com sucesso!')
     }
   } catch (error) {
     showAlert('Erro ao criar linha. Verifique os dados e tente novamente.', 'error');
@@ -239,6 +248,7 @@ async function handleSubmitEstoque(event) {
       showAlert(data.mensagem || 'Erro ao criar estoque. Verifique os dados e tente novamente.', 'error');
     } else {
       showAlert('Estoque criado com sucesso!');
+      alert('Estoque inserido com sucesso!')
     }
   } catch (error) {
     showAlert('Erro ao criar estoque. Verifique os dados e tente novamente.', 'error');
@@ -270,6 +280,7 @@ async function handleSubmitBordado(event) {
       showAlert(responseData.mensagem || 'Erro ao criar bordado. Verifique os dados e tente novamente.', 'error');
     } else {
       showAlert('Bordado criado com sucesso!');
+      alert('Bordado inserido com sucesso!')
     }
   } catch (error) {
     showAlert('Erro ao criar bordado. Verifique os dados e tente novamente.', 'error');

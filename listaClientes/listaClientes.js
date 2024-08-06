@@ -18,6 +18,7 @@ async function loadAllClientes() {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log('Resposta da API:', data)
     const tableBody = document.querySelector('#todosClientesTable tbody');
     tableBody.innerHTML = '';
 
