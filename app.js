@@ -93,16 +93,20 @@ async function loadHomeTable() {
   try {
     const response = await fetch(url);
     const data = await response.json();
+
+    // Verifique o formato dos dados recebidos
+    console.log('Dados recebidos:', data);
+
     const tableBody = document.querySelector('#homeTable tbody');
     tableBody.innerHTML = '';
 
     data.forEach(item => {
       const row = document.createElement('tr');
       row.innerHTML = `
-        <td>${item.clienteNome}</td>
-        <td>${item.produtoNome}</td>
-        <td>${item.quantidade}</td>
-        <td>${item.bordadoNome}</td>
+        <td>${item.clientenome || 'N/A'}</td>
+        <td>${item.produtonome || 'N/A'}</td>
+        <td>${item.quantidade || 'N/A'}</td>
+        <td>${item.bordadonome || 'N/A'}</td>
       `;
       tableBody.appendChild(row);
     });
@@ -110,6 +114,7 @@ async function loadHomeTable() {
     showAlert('Erro ao carregar dados da tabela. Tente novamente.', 'error');
   }
 }
+
 
 function showSection(sectionId) {
   const sections = document.querySelectorAll('.content-section');

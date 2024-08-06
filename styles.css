@@ -4,16 +4,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #e9ecef;
-  /* Cor de fundo clara e suave */
   color: #495057;
-  /* Cor do texto mais suave */
   line-height: 1.6;
 }
 
 /* Estilo para a navbar */
 nav {
   background-color: #6c5b9a;
-  /* Lilás suave */
   overflow: hidden;
   position: fixed;
   width: 100%;
@@ -21,7 +18,6 @@ nav {
   z-index: 1000;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
 }
 
 nav ul {
@@ -31,12 +27,10 @@ nav ul {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  /* Centraliza os itens */
 }
 
 nav ul li {
   margin: 0 10px;
-  /* Espaçamento uniforme */
 }
 
 nav ul li a {
@@ -47,54 +41,42 @@ nav ul li a {
   text-decoration: none;
   font-size: 16px;
   border-radius: 4px;
-  /* Bordas arredondadas */
   transition: background-color 0.3s, padding 0.3s;
 }
 
 nav ul li a:hover {
   background-color: #5a4b9d;
-  /* Lilás um pouco mais escuro no hover */
   padding: 12px 24px;
-  /* Padding ajustado */
 }
 
-/* Estilo para a seção ativa na navbar */
 nav ul li a.active {
   background-color: #343a40;
-  /* Cor escura para a seção ativa */
 }
 
 /* Estilos para o campo de pesquisa */
 .search-container {
   display: flex;
   justify-content: center;
-  /* Centraliza o container */
   margin-top: 80px;
-  /* Ajuste para não sobrepor a navbar */
 }
 
 .search-container input[type="text"] {
   width: 250px;
   padding: 10px;
   border: 1px solid #ced4da;
-  /* Borda suave */
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
 }
 
 .search-container button {
-  /* Lilás suave */
+  background-color: #6c5b9a;
   border: none;
   cursor: pointer;
   padding: 10px;
   color: white;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
 }
-
-
 
 /* Estilo para as seções de conteúdo */
 .content-section {
@@ -244,7 +226,6 @@ table tbody td {
 .close:hover,
 .close:focus {
   color: #6c5b9a;
-  /* Lilás suave no hover */
   text-decoration: none;
   cursor: pointer;
 }
@@ -290,4 +271,77 @@ button {
 
 button:hover {
   background-color: #5a4b9d;
+}
+
+/* Media Queries para Responsividade */
+
+/* Ajuste para tablets e dispositivos menores */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-container input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-container button {
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 480px) {
+  nav ul li a {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .search-container input[type="text"] {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .search-container button {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  form {
+    width: 95%;
+  }
 }
