@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadAllLinhas() {
-  const url = 'http://localhost:8080/listaLinhas';
+  const url = 'https://aguia-bordados.vercel.app/listaLinhas';
 
   try {
     const response = await fetch(url);
@@ -21,11 +21,11 @@ async function loadAllLinhas() {
     const tableBody = document.querySelector('#todasLinhasTable tbody');
     tableBody.innerHTML = '';
 
-    data.forEach(linhas => {
+    data.forEach(linha => {
       const row = document.createElement('tr');
       row.innerHTML = `
-        <td>${linhas.nome}</td>
-        <td>${linhas.codLinha}</td>
+        <td>${linha.nome}</td>
+        <td>${linha.codlinha.toString().padStart(4, '0')}</td>
       `;
       tableBody.appendChild(row);
     });
@@ -39,8 +39,8 @@ function filterLinhas(searchValue) {
   const rows = document.querySelectorAll('#todasLinhasTable tbody tr');
   rows.forEach(row => {
     const nome = row.querySelector('td:first-child').textContent.toLowerCase();
-    const descricao = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-    if (nome.includes(searchValue) || descricao.includes(searchValue)) {
+    const codLinha = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+    if (nome.includes(searchValue) || codLinha.includes(searchValue)) {
       row.style.display = '';
     } else {
       row.style.display = 'none';

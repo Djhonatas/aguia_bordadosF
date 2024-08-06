@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <title>Lista Bordados</title>
+  <title>Lista Estoque</title>
 </head>
 
 <body>
@@ -14,18 +14,16 @@
 
   <div class="search-container">
     <input type="text" id="searchInput" placeholder="Pesquisar estoque...">
-    <button id="searchButton"></button>
+    <button id="searchButton">Pesquisar</button>
   </div>
 
   <table id="todosEstoqueTable">
     <thead>
-      <button onclick="voltar()">Voltar</button>
       <tr>
         <th>Nome</th>
         <th>Quantidade</th>
         <th>Data Compra</th>
-        <th>Valor</th>
-        <!-- <th>Ação</th> -->
+        <th>Valor Pago</th>
       </tr>
     </thead>
     <tbody>

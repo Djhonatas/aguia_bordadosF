@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadAllEstoque() {
-  const url = 'http://localhost:8080/listaEstoque';
+  const url = 'https://aguia-bordados.vercel.app/listaEstoque';
 
   try {
     const response = await fetch(url);
@@ -24,10 +24,10 @@ async function loadAllEstoque() {
     data.forEach(estoque => {
       const row = document.createElement('tr');
       row.innerHTML = `
-        <td>${estoque.nome}</td>
-        <td>${estoque.quantidade}</td>
-        <td>${estoque.dataCompra}</td>
-        <td>${estoque.valorPago}</td>
+        <td>${estoque.nome || 'N/A'}</td>
+        <td>${estoque.quantidade !== undefined ? estoque.quantidade : 'N/A'}</td>
+        <td>${estoque.datacompra ? new Date(estoque.datacompra).toLocaleDateString() : 'N/A'}</td>
+        <td>${estoque.valorpago !== undefined ? parseFloat(estoque.valorpago).toFixed(2) : 'N/A'}</td>
       `;
       tableBody.appendChild(row);
     });
@@ -41,8 +41,10 @@ function filterEstoque(searchValue) {
   const rows = document.querySelectorAll('#todosEstoqueTable tbody tr');
   rows.forEach(row => {
     const nome = row.querySelector('td:first-child').textContent.toLowerCase();
-    const descricao = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-    if (nome.includes(searchValue) || descricao.includes(searchValue)) {
+    const quantidade = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+    const dataCompra = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+    const valorPago = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+    if (nome.includes(searchValue) || quantidade.includes(searchValue) || dataCompra.includes(searchValue) || valorPago.includes(searchValue)) {
       row.style.display = '';
     } else {
       row.style.display = 'none';

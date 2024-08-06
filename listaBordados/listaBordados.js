@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadAllBordados() {
-  const url = 'http://localhost:8080/listaBordados';
+  const url = 'https://aguia-bordados.vercel.app/listaBordados'; // Atualize para URL de produção
 
   try {
     const response = await fetch(url);
@@ -56,7 +56,7 @@ function filterBordados(searchValue) {
 }
 
 async function showBordadoDetalhes(bordadoId) {
-  const url = `http://localhost:8080/listaBordados/${bordadoId}`;
+  const url = `https://aguia-bordados.vercel.app/listaBordados/${bordadoId}`; // Atualize para URL de produção
 
   try {
     const response = await fetch(url);

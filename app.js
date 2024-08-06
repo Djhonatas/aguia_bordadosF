@@ -88,7 +88,7 @@ async function filterTable() {
 
 // Função da Home
 async function loadHomeTable() {
-  const url = 'http://localhost:8080/home';
+  const url = 'https://aguia-bordados.vercel.app/home'; // Atualize para URL de produção
 
   try {
     const response = await fetch(url);
@@ -140,7 +140,7 @@ function showAlert(message, type = 'success') {
 async function handleSubmitCliente(event) {
   event.preventDefault();
   const form = event.target;
-  const url = 'http://localhost:8080/clientes';
+  const url = 'https://aguia-bordados.vercel.app/clientes'; // Atualize para URL de produção
 
   try {
     const response = await fetch(url, {
@@ -165,7 +165,7 @@ async function handleSubmitCliente(event) {
 async function handleSubmitProduto(event) {
   event.preventDefault();
   const form = event.target;
-  const url = 'http://localhost:8080/produtos';
+  const url = 'https://aguia-bordados.vercel.app/produtos'; // Atualize para URL de produção
 
   try {
     const response = await fetch(url, {
@@ -194,7 +194,7 @@ async function handleSubmitProduto(event) {
 async function handleSubmitLinha(event) {
   event.preventDefault();
   const form = event.target;
-  const url = 'http://localhost:8080/linhas';
+  const url = 'https://aguia-bordados.vercel.app/linhas'; // Atualize para URL de produção
 
   try {
     const response = await fetch(url, {
@@ -219,7 +219,7 @@ async function handleSubmitLinha(event) {
 async function handleSubmitEstoque(event) {
   event.preventDefault();
   const form = event.target;
-  const url = 'http://localhost:8080/estoque';
+  const url = 'https://aguia-bordados.vercel.app/estoque'; // Atualize para URL de produção
 
   try {
     const response = await fetch(url, {
@@ -240,14 +240,11 @@ async function handleSubmitEstoque(event) {
   }
 }
 
-function isNumber(value) {
-  return !isNaN(value) && value.trim() !== '';
-}
-// Função de inserção de
+// Função de inserção de bordado
 async function handleSubmitBordado(event) {
   event.preventDefault();
   const form = event.target;
-  const url = 'http://localhost:8080/bordados';
+  const url = 'https://aguia-bordados.vercel.app/bordados'; // Atualize para URL de produção
 
   try {
     const formData = new FormData(form);
@@ -273,4 +270,3 @@ async function handleSubmitBordado(event) {
     showAlert('Erro ao criar bordado. Verifique os dados e tente novamente.', 'error');
   }
 }
-
