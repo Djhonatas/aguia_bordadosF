@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Lista Linhas</title>
+</head>
+
+<body>
+  <h1>Linhas</h1>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Pesquisar Linhas...">
+    <button id="searchButton"></button>
+  </div>
+
+  <table id="todasLinhasTable">
+    <thead>
+      <button onclick="voltar()">Voltar</button>
+      <tr>
+        <th>Nome</th>
+        <th>Código</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <button onclick="voltar()">Voltar</button>
+
+  <script src="listaLinhas.js"></script>
+</body>
+
+</html>

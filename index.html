@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Bordados</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<!-- NAVBAR -->
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#linhas">Linhas</a></li>
+      <li><a href="#estoque">Estoque</a></li>
+      <li><a href="#bordados">Bordados</a></li>
+    </ul>
+  </nav>
+  <!-- sessão da home -->
+  <section id="home" class="content-section">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Pesquisar por nome do cliente...">
+    </div>
+    <h1>Águia Bordados</h1>
+    <table id="homeTable">
+      <thead>
+        <tr>
+          <th>Nome do Cliente</th>
+          <th>Nome do Produto</th>
+          <th>Quantidade</th>
+          <th>Nome do Bordado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dados serão carregados dinamicamente aqui -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sessão dos cliente -->
+  <section id="clientes" class="content-section" style="display:none;">
+    <form id="clienteForm">
+      <label for="clienteNome">Nome:</label>
+      <input type="text" id="clienteNome" name="nome" required>
+
+      <label for="clienteEmail">Email:</label>
+      <input type="email" id="clienteEmail" name="email" required>
+
+      <label for="clienteEndereco">Endereço Completo:</label>
+      <input type="text" id="clienteEndereco" name="endCompleto" required>
+
+      <label for="clienteTelefone">Telefone:</label>
+      <input type="text" id="clienteTelefone" name="telefone" required>
+
+      <button type="submit">Criar Cliente</button>
+      <button type="button" id="listaClientes" class="btn">Clientes</button>
+    </form>
+  </section>
+
+  <!-- Sessão dos produtos -->
+  <section id="produtos" class="content-section" style="display:none;">
+
+    <form id="produtoForm">
+      <label for="produtoNome">O que será bordado (Camisetas, calças, uniformes, etc...):</label>
+      <input type="text" id="produtoNome" name="nome" required>
+
+      <label for="produtoDataEntrada">Data de Entrada:</label>
+      <input type="date" id="produtoDataEntrada" name="dataEntrada" required>
+
+      <label for="produtoNomeBordado">Nome do Bordado:</label>
+      <input type="text" id="produtoNomeBordado" name="nomeBordado" required>
+
+      <label for="produtoQuantidadeBordado">Quantidade de peças:</label>
+      <input type="number" id="produtoQuantidadeBordado" name="quantidade" required>
+
+      <label for="produtoNomeCliente">Nome do Cliente:</label>
+      <input type="text" id="produtoNomeCliente" name="nomeCliente" list="clientesList" required>
+
+      <datalist id="clientesList"></datalist>
+      <button type="submit">Criar Produto</button>
+      <button type="button" id="listaProdutos" class="btn">Produtos</button>
+    </form>
+  </section>
+
+  <!-- Sessão das linhas -->
+  <section id="linhas" class="content-section" style="display:none;">
+    <form id="linhaForm">
+      <label for="linhaNome">Nome:</label>
+      <input type="text" id="linhaNome" name="nome" required>
+
+      <label for="linhaCod">Código da Linha:</label>
+      <input type="text" id="linhaCod" name="codLinha" required>
+
+      <button type="submit">Criar Linha</button>
+      <button type="button" id="listaLinhas" class="btn">Linhas</button>
+    </form>
+  </section>
+
+  <!-- Sessão do estoque -->
+  <section id="estoque" class="content-section" style="display:none;">
+
+    <form id="estoqueForm">
+      <label for="estoqueNome">Nome:</label>
+      <input type="text" id="estoqueNome" name="nome" required>
+
+      <label for="estoqueQuantidade">Quantidade:</label>
+      <input type="number" id="estoqueQuantidade" name="quantidade" required>
+
+      <label for="estoqueDataCompra">Data de Compra:</label>
+      <input type="date" id="estoqueDataCompra" name="dataCompra" required>
+
+      <label for="estoqueValorPago">Valor Pago:</label>
+      <input type="number" id="estoqueValorPago" name="valorPago" required>
+
+      <button type="submit">Inserir</button>
+      <button type="button" id="listaEstoque" class="btn">Estoque</button>
+    </form>
+  </section>
+
+  <!-- Sessão dos bordados -->
+  <section id="bordados" class="content-section" style="display:none;">
+
+    <form id="bordadoForm">
+      <label for="bordadoNome">Nome:</label>
+      <input type="text" id="bordadoNome" name="nome" required>
+
+      <label for="bordadoDescricao">Descrição:</label>
+      <input type="text" id="bordadoDescricao" name="descricao" required>
+
+      <label for="bordadoCores">Cores (separadas por vírgulas ou espaços):</label>
+      <input type="text" id="bordadoCores" name="cores" required>
+
+      <button type="submit">Inserir</button>
+      <!-- Botão para visualizar todos os bordados -->
+      <button type="button" id="verTodosBordados" class="btn">Lista de Bordados</button>
+    </form>
+  </section>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>

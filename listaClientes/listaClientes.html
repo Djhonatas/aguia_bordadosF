@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Lista Clientes</title>
+</head>
+
+<body>
+  <h1>Lista de Clientes</h1>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Pesquisar Clientes...">
+    <button id="searchButton"></button>
+  </div>
+
+  <table id="todosClientesTable">
+    <thead>
+      <button onclick="voltar()">Voltar</button>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <button onclick="voltar()">Voltar</button>
+
+  <script src="listaClientes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Lista Bordados</title>
+</head>
+
+<body>
+  <h1>Estoque</h1>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Pesquisar estoque...">
+    <button id="searchButton"></button>
+  </div>
+
+  <table id="todosEstoqueTable">
+    <thead>
+      <button onclick="voltar()">Voltar</button>
+      <tr>
+        <th>Nome</th>
+        <th>Quantidade</th>
+        <th>Data Compra</th>
+        <th>Valor</th>
+        <!-- <th>Ação</th> -->
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <button onclick="voltar()">Voltar</button>
+
+  <script src="listaEstoque.js"></script>
+</body>
+
+</html>
